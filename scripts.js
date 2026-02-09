@@ -13,10 +13,10 @@ let ystep = ymax / ysize;
 let resolution_name = "13 x 8";
 
 const led_colors = [
-    "rgb(0, 0, 22)",
+    "rgb(0, 0, 34)",
     "rgb(0, 0, 170)",
-    "rgb(0,22, 255)",
-    "rgb(0,88, 255)",
+    "rgb(0,34, 255)",
+    "rgb(0,136, 255)",
 ];
 
 let state = Array.from({ length: ysize }, () => Array(xsize).fill(0));
@@ -215,10 +215,16 @@ function updateCode() {
 }
 
 function updateColor(c) {
+  let selectnode = document.getElementById(`p${color}`);
+  selectnode.innerHTML = "&#9634;";
+  
   color = c;
   const colornode = document.getElementById("colorId");
   const classname = `pixel${color}`;
   colornode.className = classname;
+
+  selectnode = document.getElementById(`p${color}`);
+  selectnode.innerHTML = "&#9724;";
 }
 
 function drawPixel(color1, color2, fx, fy, fdx, fdy, ctx) {
@@ -291,3 +297,4 @@ updateCode();
 initCanvas();
 updateResolution();
 drawCanvas();
+updateColor(color);
