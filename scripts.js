@@ -145,7 +145,6 @@ function go_down( do_rotate) {
     state[0][x] = v;
   }
 }
-  
 
 function shift(dx, dy, do_rotate) {
   console.log(` Shift: ${dx} ${dy} and ${do_rotate}!`);
@@ -288,7 +287,6 @@ function initCanvas() {
   });   
 }
 
-//createMatrixTable(xsize, ysize);
 updateCode();
 initCanvas();
 updateResolution();

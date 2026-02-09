@@ -2,10 +2,9 @@
   color-scheme: light dark;
 }
 
-
 body { color: rgb(192, 192, 192); 
         background-color: rgb(0, 0, 0);
- }
+}
 
 .pixel0 {
   color: #eeeeee;
@@ -33,7 +32,6 @@ body { color: rgb(192, 192, 192);
 
 .res-buttons {
   padding: 10px;
-
 }
 
 td {
@@ -46,12 +44,12 @@ td {
 .center {
   text-align: center;
   vertical-align: center;
-  
 }
 
 ul {
   border: 1px solid gray;
 }
+
 li {
   border: 1px solid gray;
 }
