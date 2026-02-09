@@ -1,0 +1,215 @@
+<html>
+<head>
+<link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+<div>
+<h1>Arduino Q Matrix Paint Utility</h1>
+</div>
+<div>
+Use this to create images for the Arduino Q LED matrix. Note the Arduino Q's on-board matrix is 13x8, however the UNO R4 WiFi LED Metris is 12x8.  The other modes are for typical matrix sizes.
+</div>
+<div>
+<div class="res-buttons">
+<div id="dimensions"> Dimensions </div>
+ <button onclick="setResolution(13, 8, '13 x 8')">13x8</button>
+ <button onclick="setResolution(12, 8, '12 x 8')">12x8</button>
+ <button onclick="setResolution(8, 8, '8 x 8')">8x8</button>
+ <button onclick="setResolution(16, 16, '16 x 16')">16x16</button>
+ <button onclick="setResolution(64, 64, '64 x 64')">64x64</button>
+</div>
+
+<div>
+<table>
+<tbody>
+  <tr><td>
+  <table>
+  <tbody>
+  <tr>
+    <td>
+      <div onclick="shift(-1, -1, false);" class="center">
+        Shift
+      </div>
+      <div style="text-align: center;">
+        &#8662;
+      </div>
+      <div onclick="shift(-1, -1, true);" class="center">
+       Rotate
+      </div>
+    </td>
+    <td>
+      <div onclick="shift(0, -1, false);" class="center">
+        Shift
+      </div>
+      <div style="text-align: center;">
+          &#8657;
+      </div>
+      <div onclick="shift(0, -1, true);" class="center">
+        Rotate
+      </div>
+     </td>
+     <td>
+      <div onclick="shift(1, -1, false);" class="center">
+        Shift
+      </div>
+      <div style="text-align: center;">
+       &#8663;
+      </div>
+      <div onclick="shift(1, -1, true);" class="center">
+        Rotate
+      </div>
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <div onclick="shift(-1, 0, false);" class="center">
+        Shift
+      </div>
+      <div style="text-align: center;">
+       &#8656;
+      </div>
+      <div onclick="shift(-1, 0, true);" class="center">
+        Rotate
+      </div>
+    </td>
+    <td>
+     <canvas id="ledmatrix" height=368 width=598></canvas>
+    </td>
+    <td>
+      <div onclick="shift(1, 0, false);" class="center">
+        Shift
+      </div>
+      <div style="text-align: center;">
+       &#8658;
+      </div>
+      <div onclick="shift(1, 0, true);" class="center">
+        Rotate
+      </div>
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <div onclick="shift(-1, 1, false);" class="center">
+        Shift
+      </div>
+      <div style="text-align: center;">
+        &#8665;
+      </div>
+      <div onclick="shift(-1, 1, true);" class="center">
+        Rotate
+      </div>
+    </td>
+     <td>
+      <div onclick="shift(0, 1, false);" class="center">
+        Shift
+      </div>
+      <div style="text-align: center;">
+        &#8659;
+      </div>
+      <div onclick="shift(0, 1, true);" class="center">
+        Rotate
+      </div>
+     </td>
+     <td>
+      <div onclick="shift(1, 1, false);" class="center">
+       Shift
+      </div>
+      <div style="text-align: center;">
+       &#8664;
+      </div>
+      <div onclick="shift(1, 1, true);" class="center">
+        Rotate
+      </div>
+    </td>
+  </tr>
+  </tbody>
+  </table>
+  </td>
+  <td width="300px">
+
+  <table class="center">
+
+  <tbody>
+<tr><td>
+  Select Color
+   </td></tr>
+  <tr><td>
+      <div id="colorId" class="pixel3">
+        <h1>&#10002;</h1>
+      </div>
+   <ul>
+    <li>
+      <div class="pixel0" onclick="updateColor(0)">
+         &#9634;
+      </div>
+    </li>
+    <li>
+      <div class="pixel1" onclick="updateColor(1)">
+         &#9634;
+      </div>
+    </li>
+    <li>
+      <div class="pixel2" onclick="updateColor(2)">
+         &#9634;
+      </div>
+    </li>
+    <li>
+      <div class="pixel3" onclick="updateColor(3)">
+         &#9634;
+      </div>
+    </li>
+   </ul>
+   </td></tr>
+    <tr><td>
+       <button onclick="drawCircle()">Draw Circle</button>
+       <label for="radius-select">Radius:</label>
+       <select id="radius-select" name="radius">
+          <option value="1">1</option>
+          <option value="2">2</option>
+          <option value="3">3</option>
+          <option value="4">4</option>
+          <option value="5">5</option>
+       </select>
+   </td></tr>
+    <tr><td>
+  <div>
+       <button onclick="clearMatrix()">Clear</button>
+  </div>
+   </td></tr>
+   </tbody>
+   </table>
+  </td></tr>
+</tbody>
+</table>
+</div>
+
+<hr>
+<hr>
+<div>
+<div>
+<h3>
+Rename Array
+</h3>
+</div>
+     <input type="text" id="name" name="name" required minlength="1" maxlength="100" size="20" value=""
+onchange = "updateName();" 
+onkeypress = "updateName();" 
+onchange = "updateName();" 
+onpaste = "updateName();" 
+oninput = "updateName();" 
+ />
+</div>
+
+<pre>
+<div>
+<div id="code">
+code
+goes
+   here....
+</div>
+</div>
+</pre>
+<script src="./scripts.js"></script>
+</body>
+</html>
+
