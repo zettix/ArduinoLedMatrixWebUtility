@@ -4,3 +4,4 @@ Simply download these files and open them with your browser using the 'file://' 
 
 Copy/paste the resulting code to your sketches.
 
+[editor example](https://github.com/zettix/ArduinoLedMatrixWebUtility/blob/main/pixel-editor.jpg)
